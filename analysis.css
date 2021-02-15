@@ -1,0 +1,49 @@
+div{
+    display: inline-block;
+    margin: 3px;
+}
+.P{
+    background:#fadbb5;
+}
+.P .PRD:only-of-type{
+    background: transparent;
+}
+.PRD, .PRD_EXP{
+    background: #faf2d4;
+}
+.PRD:first-child, .SBJ_EXP{
+    background: #e0b002;
+}
+.PrepP, .PrepP_EXP{
+    background: #dbe1d3;
+}
+.PrepP:first-child{
+    background: transparent;
+}
+.PrepP:not(:first-child) .Word:first-child{
+    color: #569702;
+    font-weight: bold;
+}
+.Word::before{
+    display: block;
+    content: attr(data-content);
+    font-weight: normal;
+}
+dt{
+    float: left;
+    font-weight: bold;
+}
+dt div{
+    margin: 0;
+    width: 8em;
+    font-weight: normal;
+}
+dd{
+    margin-left: 10em;
+}
+h1, h2{
+    display: none;
+}
+table, table tr, table tr th, table tr td{
+    border: 1px solid black;
+}

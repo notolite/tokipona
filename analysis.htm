@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="analysis.css">
+    <script src="parser.js"></script>
+    <script src="comp.js"></script>
+    <script src="pos.js"></script>
+    <script src="drawer.js"></script>
+    <script src="meaning.js"></script>
+    <script>
+        var S = [];
+        var input;
+        var str = "";
+        let P = [];
+        let POS = [];
+        let SType = [];
+        function pali() {
+            input = document.getElementById("in").value;
+            kipisi();
+            lon();
+            sitelen();
+            lipu();
+            document.getElementById("result").innerHTML = str + tbl;
+            designArrange();
+        }
+    </script>
+</head>
+
+<body onload="pali()">
+    <h1>toki pona分析器</h1>
+    <section>
+        <h2>入力</h2>
+        <textarea id="in" rows="4"
+            cols="60">sina pona la mi pona li toki lon toki Nijon kepeken tenpo lili. taso sina ike.</textarea>
+        <p><input type="button" onclick="pali()" value="実行"></p>
+    </section>
+    <section>
+        <h2>出力</h2>
+        <div id="result"></div>
+    </section>
+    <section>
+        <h2>定義</h2>
+        <section>
+            <h3>品詞について</h3>
+            <p>下記の品詞は訳文を考案する際に参考となるべき，toki ponaと日本語や英語との折衷的なものです．toki
+                ponaの記述の際に分類として用いられるべき品詞分類はより少なく，究極には内容語と機能語の別しかありません．また，判定される品詞は形式的に考え得るもの全てを示しており，意味的な観点から品詞が更に特定されうることもあります．
+            </p>
+            <h4>略号</h4>
+            <dl>
+                <dt>名</dt>
+                <dd>名詞的内容語．内容語が事物や現象を表していると考えられる場合．</dd>
+                <dt>形</dt>
+                <dd>形容詞的内容語．内容語が状態や性質を表していたり，名詞的内容語を修飾していたりすると考えられる場合．</dd>
+                <dt>動</dt>
+                <dd>動詞的内容語．内容語が動作を表していると考えられる場合．</dd>
+                <dt>副</dt>
+                <dd>副詞的内容語．内容語が動詞的内容語を修飾していると考えられる場合．</dd>
+                <dt>前</dt>
+                <dd>前置詞．</dd>
+                <dt>分</dt>
+                <dd>分離詞．節や主述などの構造の上で境界となる位置を示す機能語．</dd>
+                <dt>疑問・詠嘆</dt>
+                <dd>疑問・詠嘆を表し，文末に位置する機能語．</dd>
+                <dt>接</dt>
+                <dd>接続詞的語．文と文，あるいは語句と語句を接続する語．</dd>
+            </dl>
+        </section>
+        <section>
+            <h3>構造上の色分けについて</h3>
+            <p>用語については独自定義しているものがあります．</p>
+            <dl>
+                <dt>
+                    <div class="P">節</div>
+                </dt>
+                <dd>主述部を伴う塊，またはそれと同等の機能を有する名詞的句です．主節と，時・条件を表し，直後に分離詞laを伴うla節とがあり，la節は主節に前置します．</dd>
+                <dt>
+                    <div class="SBJ_EXP">主部</div>
+                </dt>
+                <dd>節の主部となる名詞的句です．</dd>
+                <dt>
+                    <div class="PRD_EXP">述部</div>
+                </dt>
+                <dd>節の述部となる句です．直前に分離詞liを伴い，ひとつの節に複数存在できます．</dd>
+                <dt>
+                    <div class="PrepP_EXP">前置詞句<br>目的語句</div>
+                </dt>
+                <dd>前置詞句はその第一語に前置詞を伴う語の塊です．目的語句は動詞的内容語の動作の対象となる名詞的語句で，直前に分離詞eを伴います．前置詞句と目的語句は述部の中に複数存在できます．両者はpuによる機能語の定義からするに別の概念ですが，分析上類似しているためまとめて表示します．
+                </dd>
+            </dl>
+        </section>
+    </section>
+
+</body>
+
+</html>

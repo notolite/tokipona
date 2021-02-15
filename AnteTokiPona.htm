@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="antetokipona.css">
+
+<script src="antetokipona.js"></script>
+</head>
+<body>
+<h1>ilo pi sitelen ante pi toki pona</h1>
+<textarea id="ruli" placeholder="ラテン文字 sitelen Lasin" autofocus onInput="bianhuan()"></textarea>
+<div onclick="clipcopyL()" class="copy">ラテン文字の出力をコピー</div>
+<textarea id="chuliC" placeholder="中国語準拠漢字 sitelen Jansi pi toki Sonko" onInput="bianhuanC()"></textarea>
+<div onclick="clipcopyC()" class="copy">中国語準拠漢字の出力をコピー</div>
+<textarea id="chuliJ" placeholder="日本語準拠漢字 sitelen Kansi pi toki Nijon" onInput="bianhuanJ()"></textarea>
+<div onclick="clipcopyJ()" class="copy">日本語準拠漢字の出力をコピー</div>
+<textarea id="chuliE" placeholder="Unicode 6.0絵文字 sitelen Emosi pi lipu Junikodo nanpa pi luka wan" onInput="bianhuanE()"></textarea>
+<div onclick="clipcopyE()" class="copy">絵文字の出力をコピー</div>
+<textarea id="chuliT" placeholder="Unicode 6.0絵文字(Twitter絵文字はりつけ用) sitelen Emosi pi lipu Junikodo nanpa pi luka wan tawa lipu Tuwita" onInput="bianhuanT()"></textarea>
+	<section id="Siyouhou">
+	<h2>使用法</h2>
+    <p>ラテン文字、漢字（中国語準拠・日本語準拠）、絵文字（Unicode 6.0準拠）で表記されたトキポナを、それぞれのtextareaに入力するか貼り付けると、自動で変換されます。Twitter上の絵文字はコピーすると日本語の文字列（絵文字の名称？）に変換されてしまうので、その場合は、一番最後のtextareaに貼り付けてください。</p>
+<p>トキポナの漢字表記は、次のサイトに準拠しています。<br>source:<a href="http://tokipona.net/tp/ClassicWordList.aspx">http://tokipona.net/tp/ClassicWordList.aspx</a></p>
+	</section>
+</body>
+</html>

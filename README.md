@@ -15,8 +15,10 @@ With this, It is output how you say a certain number in the classical style of t
 ### To Run
 Node.js required.
 ```bash
+: command
 node (Path)/Nanpa.js (number)
-node C:\\Nanpa.js 135 // example
+: example
+node C:\Nanpa.js 135
 ```
 ### Files
 The source file of this project includes [Nanpa.js](https://github.com/leenamgwang/tokipona/blob/master/Nanpa.js)

@@ -3,23 +3,19 @@
 
 <head>
     <link rel="stylesheet" href="analysis.css">
+    <script src="func.js"></script>
     <script src="parser.js"></script>
     <script src="comp.js"></script>
     <script src="pos.js"></script>
     <script src="drawer.js"></script>
     <script src="meaning.js"></script>
     <script>
-        var S = [];
-        var input;
-        var str = "";
-        let P = [];
-        let POS = [];
-        let SType = [];
         function pali() {
             input = document.getElementById("in").value;
             kipisi();
             lon();
             sitelen();
+            lukin();
             lipu();
             document.getElementById("result").innerHTML = str + tbl;
             designArrange();
@@ -89,6 +85,10 @@
                 </dd>
             </dl>
         </section>
+    </section>
+    <section>
+        <h2>ご意見</h2>
+        <p>言語の翻訳は容易ならざる行いであり，それぞれの単語に訳語を負わせて機械的に置き換えれば済むものではない点は周知のことと思いますが，この取り組みではtoki ponaのミニマリズムを活かしてこれを敢えて行おうとしているのであります。しかしながら，120あまりの単語でさえ，その網羅的な訳語の策定は困難であり，不十分な個所や幽霊的に登録されている意味・用法があることと思います。訳語の精度向上にご協力いただける方は，ご意見を<a ahref="https://twitter.com/share?text='@leenamgwangtoki pona分析器訳語改善のご提案'">作者Twitter</a>までお願いもうしあげます。</p>
     </section>
 
 </body>

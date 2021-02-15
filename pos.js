@@ -102,7 +102,6 @@ function lon() {
                                     }
                                     break;
                                 case "G":
-                                    console.log("true" + i + j + k);
                                     switch (S[i][j][k][l][m]) {
                                         case "taso":
                                             POS[i][j][k][l][m] = "接";

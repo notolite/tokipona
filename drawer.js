@@ -76,8 +76,8 @@ function designArrange() {
         }
     }
 }
-let f_m = "";
-let count;
+let n_m = adj_m = v_m = adv_m = f_m = "";
+let count = 0;
 function lipu(){
     tbl = "<table><tr><th>文番号</th><th>節番号</th><th>部番号</th><th>句番号</th><th>語番号</th><th>単語</th><th>名詞</th><th>形容詞</th><th>動詞</th><th>副詞</th><th>機能語</th></tr>";
     for (i = 0; i < S.length; i++) {
@@ -85,8 +85,14 @@ function lipu(){
             for (k = 0; k < S[i][j].length; k++) {
                 for (l = 0; l < S[i][j][k].length; l++) {
                     for (m = 0; m < S[i][j][k][l].length; m++) {
+                        n_m = adj_m = v_m = adv_m = f_m = "";
+                        try{n_m = matchWords[count][0].n.join(',');}catch{n_m = "N/A";}
+                        try{adj_m = matchWords[count][0].adj.join(',');}catch{adj_m = "N/A";}
+                        try{v_m = matchWords[count][0].v.join(',');}catch{adv_m = "N/A";}
+                        try{adv_m = matchWords[count][0].adv.join(',');}catch{v_m = "N/A";}
+                        try{f_m = matchWords[count][0].adv.join(',');}catch{f_m = "N/A";}
                         count++;
-                        tbl += "<tr><td>" + i + "</td><td>" + j + "</td><td>" + k + "</td><td>" + l + "</td><td>" + m + "</td><td>" + S[i][j][k][l][m] + "</td><td> " + matchWords[count].n.join(',') + "</td><td>" + matchWords[count].adj.join(',') + "</td><td>" + matchWords[count].v.join(',') + "</td><td>" + matchWords[count].adv.join(',') + "</td><td>" + f_m + "</td></tr>";
+                        tbl += "<tr><td>" + i + "</td><td>" + j + "</td><td>" + k + "</td><td>" + l + "</td><td>" + m + "</td><td>" + S[i][j][k][l][m] + "</td><td> " + n_m + "</td><td>" + adj_m + "</td><td>" + v_m + "</td><td>" + adv_m + "</td><td>" + f_m + "</td></tr>";
                     }
                 }
             }

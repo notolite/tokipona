@@ -90,7 +90,7 @@ function lipu(){
                         try{adj_m = matchWords[count][0].adj.join(',');}catch{adj_m = "N/A";}
                         try{v_m = matchWords[count][0].v.join(',');}catch{adv_m = "N/A";}
                         try{adv_m = matchWords[count][0].adv.join(',');}catch{v_m = "N/A";}
-                        try{f_m = matchWords[count][0].adv.join(',');}catch{f_m = "N/A";}
+                        try{f_m = matchWords[count][0].f.join(',');}catch{f_m = "N/A";}
                         count++;
                         tbl += "<tr><td>" + i + "</td><td>" + j + "</td><td>" + k + "</td><td>" + l + "</td><td>" + m + "</td><td>" + S[i][j][k][l][m] + "</td><td> " + n_m + "</td><td>" + adj_m + "</td><td>" + v_m + "</td><td>" + adv_m + "</td><td>" + f_m + "</td></tr>";
                     }

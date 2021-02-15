@@ -5,7 +5,8 @@ let P = [];
 let POS = [];
 let SType = [];
 let dic;
-let requestURL = 'https://raw.githubusercontent.com/leenamgwang/tokipona/master/dic.json';
+// let requestURL = 'https://raw.githubusercontent.com/leenamgwang/tokipona/master/dic.json'; // on github
+let requestURL = 'dic.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';

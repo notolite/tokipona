@@ -1,8 +1,33 @@
-<p>In my toki pona repository, I share some contents which might help you understand toki pona sentences, mainly through github pages.</p>
-<p>On <a href="https://leenamgwang.github.io/tokipona/AnteTokiPona.htm">the script converter</a>, or ilo sitelen ante pi toki pona, you can transcript several ways to write toki pona in to each other. Now four kinds of orthographies are available: using the Latin Alphabet, the Chinese characters referring to their use in Chinese and those in Japanese, and emojis. The sources of each writing systems are shown on the page.</p>
-<!-- now suspended
-<p>On <a href="https://leenamgwang.github.io/tokipona/koubunn.htm">the grammar introduction</a>, I give you some lectures on the grammar of toki pona. I wrote it to my friends who are not familiar to toki pona so that they can quickly learn to read relatively long sentences in toki pona. As the main point of my lessons, I consider the syntax, which few websites explain clearly and let the learners get to master naturally through experiences of reading and writing. This site has not been completed.</p>
--->
-<p>On <a href="https://leenamgwang.github.io/tokipona/Nanpa.js">the numeral translation tool</a>, the way to say a certain number in toki pona is output. It is programmed in javascript as a stand alone application, so download it and run it on Node.js or something.</p>
-<p>Actually, I am neither a student majoring in linguistics, nor have specially profound knowledge on toki pona. You can any contents under this repository as far as permitted, but make sure that I am not confident with and cannot be responsible for the websites here. If you have expertise on toki pona or linguistics and found some misinformation in my work, any advice are welcome. To contact me, send a tweet with mention or a direct message to @leenamgwang on Twitter. (I know I should use an e-mail to enable a communication widely used, but I'm still planning of it.)</p>
-<p>The products are for Japanese speakers.</p>
+# Repository Tokipona
+In the repository tokipona, I'll share some convenient tools involved in the conlang toki pona, created by jan Sonja.
+
+## Script Converter
+### Link
+[link to the GitHub Pages page](https://leenamgwang.github.io/tokipona/AnteTokiPona.htm) 
+### Introduction
+With this tool, you can transcript several ways to write toki pona in to each other. Now four kinds of orthographies are available: using the Latin Alphabet, the Chinese characters referring to their use in Chinese and those in Japanese, and emojis. The sources of each writing systems are shown on the page.
+### Files
+The source files of this project include [AnteTokiPona.htm](https://github.com/leenamgwang/tokipona/blob/master/AnteTokiPona.htm), [antetokipona.css](https://github.com/leenamgwang/tokipona/blob/master/antetokipona.css) and [antetokipona.js](https://github.com/leenamgwang/tokipona/blob/master/antetokipona.js)
+
+## Numeral Translator
+### Introduction
+With this, It is output how you say a certain number in the classical style of toki pona.
+### To Run
+Node.js required.
+```bash
+node (Path)/Nanpa.js (number)
+node C:\\Nanpa.js 135 // example
+```
+### Files
+The source file of this project includes [Nanpa.js](https://github.com/leenamgwang/tokipona/blob/master/Nanpa.js)
+
+## Analyzor and Translation Supportor (Under Development)
+### Link
+[link to the GitHub Pages page](https://leenamgwang.github.io/tokipona/analysis.htm) 
+### Introduction
+This supports Japanese speakers who don't know toki pona to read it through structure analysis and translation suggestions into Japanese.
+### Files
+The source codes of this project include [analysis.htm](https://github.com/leenamgwang/tokipona/blob/master/analysis.htm), [analysis.css](https://github.com/leenamgwang/tokipona/blob/master/analysis.css), [comp.js](https://github.com/leenamgwang/tokipona/blob/master/comp.js), [drawer.js](https://github.com/leenamgwang/tokipona/blob/master/drawer.js), [func.js](https://github.com/leenamgwang/tokipona/blob/master/func.js), [meaning.js](https://github.com/leenamgwang/tokipona/blob/master/meaning.js), [parser.js](https://github.com/leenamgwang/tokipona/blob/master/parser.js) and [pos.js](https://github.com/leenamgwang/tokipona/blob/master/pos.js). The data file of this project includes [dic.json](https://github.com/leenamgwang/tokipona/blob/master/dic.json).
+
+## Reliability
+The creator of the tools are neither an linguist nor an expert in toki pona. After using the tools, I recommend you to refer to another source to ensure the knowledge you'll have gotten here. If you find any obvious misinformation, please contact me ([Twitter](https://twitter.com/leenamgwang)). 

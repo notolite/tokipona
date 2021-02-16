@@ -113,7 +113,7 @@ function lon() {
                                             POS[i][j][k][l][m] = "分";
                                             break;
                                         case "a":
-                                            POS[i][j][k][l][m] = "詠嘆";
+                                            POS[i][j][k][l][m] = "詠";
                                             break;
                                         case "anu":
                                             POS[i][j][k][l][m] = "接";

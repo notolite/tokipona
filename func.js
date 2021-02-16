@@ -15,3 +15,4 @@ request.onload = () => {
     dic = request.response;
 }
 let matchWords = new Array();
+let grayOpacity = 0.3;

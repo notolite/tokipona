@@ -1,4 +1,4 @@
-function compounds(){
+function compounds(i){
     S[i] = S[i].replace("anu seme","anuSseme");
     S[i] = S[i].replace(/\s([A-Z])/g,"S$1");
 }

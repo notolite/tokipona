@@ -4,13 +4,13 @@
 // : command
 
 function kipisi() {
-    var lastL = input.slice(-1);
+    let lastL = input.slice(-1);
     if (lastL == "." || lastL == "?" || lastL == "!") {
         input = input.substr(0, input.length - 1);
     }
     S = input.split(/\.\s|\?\s|\!\s/g);
-    for (i = 0; i < S.length; i++) {
-        compounds();
+    for (var i = 0; i < S.length; i++) {
+        compounds(i);
         S[i] = S[i].split(/(^taso\s|\so,\s|\sla\s|\sanuSseme|\sa$)/);
         S[i] = S[i].filter(Boolean);
         for (var j = 0; j < S[i].length; j++) {

@@ -76,20 +76,19 @@ function designArrange() {
         }
     }
 }
-let n_m = adj_m = v_m = adv_m = f_m = "";
-let count = 0;
 function lipu() {
+    let n_m = adj_m = v_m = adv_m = f_m = "", count = 0;
     tbl = "<table><tr><th>文番号</th><th>節番号</th><th>部番号</th><th>句番号</th><th>語番号</th><th>単語</th><th>名詞</th><th>形容詞</th><th>動詞</th><th>副詞</th><th>機能語</th></tr>";
-    for (i = 0; i < S.length; i++) {
-        for (j = 0; j < S[i].length; j++) {
-            for (k = 0; k < S[i][j].length; k++) {
-                for (l = 0; l < S[i][j][k].length; l++) {
-                    for (m = 0; m < S[i][j][k][l].length; m++) {
+    for (let i = 0; i < S.length; i++) {
+        for (let j = 0; j < S[i].length; j++) {
+            for (let k = 0; k < S[i][j].length; k++) {
+                for (let l = 0; l < S[i][j][k].length; l++) {
+                    for (let m = 0; m < S[i][j][k][l].length; m++) {
                         n_m = adj_m = v_m = adv_m = f_m = "";
                         try { n_m = matchWords[count][0].n.join(','); } catch { n_m = ""; }
                         try { adj_m = matchWords[count][0].adj.join(','); } catch { adj_m = ""; }
-                        try { v_m = matchWords[count][0].v.join(','); } catch { adv_m = ""; }
-                        try { adv_m = matchWords[count][0].adv.join(','); } catch { v_m = ""; }
+                        try { v_m = matchWords[count][0].v.join(','); } catch { v_m = ""; }
+                        try { adv_m = matchWords[count][0].adv.join(','); } catch { adv_m = ""; }
                         try { f_m = matchWords[count][0].f.join(','); } catch { f_m = ""; }
                         count++;
                         tbl += "<tr><td>" + i + "</td><td>" + j + "</td><td>" + k + "</td><td>" + l + "</td><td>" + m + "</td><td>" + S[i][j][k][l][m] + "</td><td> " + n_m + "</td><td>" + adj_m + "</td><td>" + v_m + "</td><td>" + adv_m + "</td><td>" + f_m + "</td></tr>";
@@ -99,26 +98,26 @@ function lipu() {
         }
     }
     tbl += "</table>"
+    matchWords = [];
 }
-let cc;
-let graylist = new Array();
 function gray() {
+    const grayOpacity = 0.3;
     const table = document.getElementsByTagName("table")[0];
-    for (var i = 0; i < count; i++) {
-        for (var j = 0; j < 5; j++) {
-            cc = table.rows[i + 1].cells[j + 6];
+    for (let i = 0; i < table.rows.length - 1; i++) {
+        for (let j = 0; j < 5; j++) {
+            let cc = table.rows[i + 1].cells[j + 6];
             if (cc.innerText == "") {
                 cc.style.opacity = grayOpacity;
             }
         }
     }
     count = 0;
-
-    for (i = 0; i < S.length; i++) {
-        for (j = 0; j < S[i].length; j++) {
-            for (k = 0; k < S[i][j].length; k++) {
-                for (l = 0; l < S[i][j][k].length; l++) {
-                    for (m = 0; m < S[i][j][k][l].length; m++) {
+    let graylist = new Array();
+    for (let i = 0; i < S.length; i++) {
+        for (let j = 0; j < S[i].length; j++) {
+            for (let k = 0; k < S[i][j].length; k++) {
+                for (let l = 0; l < S[i][j][k].length; l++) {
+                    for (let m = 0; m < S[i][j][k][l].length; m++) {
                         count++;
                         switch(POS[i][j][k][l][m]){
                             case "名":
@@ -138,6 +137,7 @@ function gray() {
                                 break;
                             case "形/副":
                                 graylist = [6,8,10];
+                                break;
                             case "接":
                             case "分":
                             case "詠":
@@ -146,9 +146,10 @@ function gray() {
                                 graylist = [6,7,8,9];
                                 break;
                         }
-                        for (n = 0; n < graylist.length; n++) {
+                        for (let n = 0; n < graylist.length; n++) {
                             table.rows[count].cells[graylist[n]].style.opacity = grayOpacity;
                         }
+                        graylist = [];
                     }
                 }
             }
